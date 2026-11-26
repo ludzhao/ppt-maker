@@ -15,16 +15,23 @@ GF = 'https://github.com/google/fonts/raw/main/ofl'
 JSD = 'https://cdn.jsdelivr.net/gh/google/fonts@main/ofl'   # 国内镜像
 
 # 源文件：名字 -> (候选下载地址列表)
+_CN = ['https://testingcf.jsdelivr.net/gh/google/fonts@main/ofl', 'https://gcore.jsdelivr.net/gh/google/fonts@main/ofl', JSD]   # 国内可用的镜像优先
+_GHP = ['https://gh-proxy.com/', 'https://ghfast.top/', '']   # GitHub Releases 国内代理，最后直连
+
+
+def _gf(path): return [f'{m}/{path}' for m in _CN] + [f'{GF}/{path}']
+def _rel(url): return [p + url for p in _GHP]
+
+
 SOURCES = {
-    'NotoSansSC[wght].ttf': [f'{GF}/notosanssc/NotoSansSC%5Bwght%5D.ttf', f'{JSD}/notosanssc/NotoSansSC%5Bwght%5D.ttf'],
-    'NotoSerifSC[wght].ttf': [f'{GF}/notoserifsc/NotoSerifSC%5Bwght%5D.ttf', f'{JSD}/notoserifsc/NotoSerifSC%5Bwght%5D.ttf'],
-    'Inter[opsz,wght].ttf': [f'{GF}/inter/Inter%5Bopsz,wght%5D.ttf', f'{JSD}/inter/Inter%5Bopsz,wght%5D.ttf'],
-    'SpaceGrotesk[wght].ttf': [f'{GF}/spacegrotesk/SpaceGrotesk%5Bwght%5D.ttf', f'{JSD}/spacegrotesk/SpaceGrotesk%5Bwght%5D.ttf'],
-    'PlayfairDisplay[wght].ttf': [f'{GF}/playfairdisplay/PlayfairDisplay%5Bwght%5D.ttf', f'{JSD}/playfairdisplay/PlayfairDisplay%5Bwght%5D.ttf'],
-    'LXGWWenKai-Regular.ttf': ['https://github.com/lxgw/LxgwWenKai/releases/download/v1.530/LXGWWenKai-Regular.ttf',
-                               'https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/files/lxgwwenkai-regular.ttf'],
-    'LXGWWenKai-Medium.ttf': ['https://github.com/lxgw/LxgwWenKai/releases/download/v1.530/LXGWWenKai-Medium.ttf'],
-    'smiley/SmileySans-Oblique.ttf': ['zip:https://github.com/atelier-anchor/smiley-sans/releases/download/v2.0.1/smiley-sans-v2.0.1.zip'],
+    'NotoSansSC[wght].ttf': _gf('notosanssc/NotoSansSC%5Bwght%5D.ttf'),
+    'NotoSerifSC[wght].ttf': _gf('notoserifsc/NotoSerifSC%5Bwght%5D.ttf'),
+    'Inter[opsz,wght].ttf': _gf('inter/Inter%5Bopsz,wght%5D.ttf'),
+    'SpaceGrotesk[wght].ttf': _gf('spacegrotesk/SpaceGrotesk%5Bwght%5D.ttf'),
+    'PlayfairDisplay[wght].ttf': _gf('playfairdisplay/PlayfairDisplay%5Bwght%5D.ttf'),
+    'LXGWWenKai-Regular.ttf': _rel('https://github.com/lxgw/LxgwWenKai/releases/download/v1.530/LXGWWenKai-Regular.ttf'),
+    'LXGWWenKai-Medium.ttf': _rel('https://github.com/lxgw/LxgwWenKai/releases/download/v1.530/LXGWWenKai-Medium.ttf'),
+    'smiley/SmileySans-Oblique.ttf': ['zip:' + u for u in _rel('https://github.com/atelier-anchor/smiley-sans/releases/download/v2.0.1/smiley-sans-v2.0.1.zip')],
 }
 
 # PPT 里用的字体名 -> {样式: (源文件, 可变轴设置 或 None)}
@@ -51,13 +58,13 @@ def fetch(name):
     for url in SOURCES[name]:
         try:
             if url.startswith('zip:'):
-                data = urllib.request.urlopen(urllib.request.Request(url[4:], headers={'User-Agent': 'ppt-skill/1.0'}), timeout=120).read()
+                data = urllib.request.urlopen(urllib.request.Request(url[4:], headers={'User-Agent': 'ppt-skill/1.0'}), timeout=60).read()
                 with zipfile.ZipFile(io.BytesIO(data)) as z:
                     member = [m for m in z.namelist() if m.endswith(pathlib.Path(name).name)][0]
                     dst.write_bytes(z.read(member))
             else:
                 req = urllib.request.Request(url, headers={'User-Agent': 'ppt-skill/1.0'})
-                dst.write_bytes(urllib.request.urlopen(req, timeout=120).read())
+                dst.write_bytes(urllib.request.urlopen(req, timeout=60).read())
             return dst
         except Exception as e:
             last = e

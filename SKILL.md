@@ -1,6 +1,20 @@
 ---
 name: ppt-maker
 description: 做 PPT / 幻灯片 / 汇报 / 述职 / 课件 / 路演 / 行业分析报告时使用。先采访用户、给出大纲建议，确认后生成原生可编辑的 PowerPoint（.pptx，带动画、自动图表、嵌入字体）和逐页演讲稿。用户要改已经生成的 PPT（改数字、改文字、加页）时也用。
+display_name: 高级感 PPT 一键生成
+display_name_en: PPT Maker
+description_zh: 先采访再出大纲，一键生成原生可编辑的 PowerPoint：13 种风格可看图选择，图表数据自带动效，嵌入字体，附逐页讲稿。
+description_en: Interviews you, drafts an outline, then builds a native editable PowerPoint with 13 visual styles, animated data charts, embedded fonts and speaker notes.
+examples_zh:
+  - "帮我做一份 10 分钟的年终述职 PPT，数据我贴给你"
+  - "做一个 AI 行业分析报告的 PPT，要深色高级风"
+  - "把这份 PPT 换成黑白杂志风格，第 5 页的数字改一下"
+examples_en:
+  - "Make a 10-minute year-end review deck from the numbers I paste"
+  - "Build a dark, premium-looking AI industry report deck"
+  - "Switch this deck to the black-and-white magazine style and fix the numbers on slide 5"
+version: 1.0.0
+author: ludzhao
 ---
 
 # PPT 生成
@@ -11,7 +25,7 @@ description: 做 PPT / 幻灯片 / 汇报 / 述职 / 课件 / 路演 / 行业分
 ```
 python3 SKILL_DIR/tools/setup_env.py
 ```
-看到「依赖齐全」或「安装完成」再往下走。失败就把报错原文告诉用户，不要自己改代码。
+第一次运行会自动下载字体和配图（约 28MB，走国内镜像，通常 1 分钟内）。看到「依赖齐全」或「安装完成」再往下走。失败就把报错原文告诉用户，不要自己改代码。
 
 ## 第 1 步：采访（一次问完，等用户回答）
 用一条消息问下面这些，用户没说的不要自己编：
