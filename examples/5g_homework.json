@@ -1,0 +1,713 @@
+{
+ "title": "5G 进入下半场：从建网到用网",
+ "footer": "5G 进入下半场 · 数据截至 2026 年 9 月",
+ "transition": "morph",
+ "slides": [
+  {
+   "layout": "cover",
+   "kicker": "INDUSTRY REVIEW · 2026",
+   "badge": "5G",
+   "title": [
+    "5G 进入下半场",
+    "从建网到用网"
+   ],
+   "subtitle": "运营商现状、网络建设进展与下一步机会",
+   "meta": "工信部、三大运营商公开数据 · 截至 2026 年 9 月",
+   "transition": "fade",
+   "notes": "开场：今天只讲三件事——网建到哪了、钱从哪来、下一步看什么。一句话结论先放这：5G 的上半场比谁建得快，下半场比谁用得好。",
+   "stats": [
+    {
+     "value": "525.4万",
+     "label": "5G 基站（2026.9）",
+     "highlight": true
+    },
+    {
+     "value": "13.2亿",
+     "label": "5G 用户"
+    },
+    {
+     "value": "71.2%",
+     "label": "5G 渗透率"
+    },
+    {
+     "value": "23.89GB",
+     "label": "户均月流量 DOU"
+    }
+   ]
+  },
+  {
+   "layout": "agenda",
+   "title": "四个问题，看懂 5G 为什么进入「下半场」",
+   "items": [
+    {
+     "title": "建网：规模见顶",
+     "text": "基站超 525 万，每年新增在下降",
+     "image": "../assets/5g_images/tower.jpg"
+    },
+    {
+     "title": "用网：流量涨，收入平",
+     "text": "用户渗透率 71%，钱却越来越难赚",
+     "image": "../assets/5g_images/city_night.jpg"
+    },
+    {
+     "title": "运营商：钱往哪里花",
+     "text": "资本开支连降，投资从网络搬到算力",
+     "image": "../assets/5g_images/datacenter.jpg"
+    },
+    {
+     "title": "下一步：5G-A、行业、算力",
+     "text": "下半场的三条新赛道",
+     "image": "../assets/5g_images/tower_aerial.jpg"
+    }
+   ],
+   "notes": "四个部分，大概 12 分钟。",
+   "kicker": "CONTENTS"
+  },
+  {
+   "layout": "hero",
+   "image": "../assets/5g_images/tower.jpg",
+   "credit": "Michał Beim / Wikimedia Commons (CC BY 4.0)",
+   "kicker": "PART 01 · 建网",
+   "title": [
+    "500 万座基站之后，",
+    "铺量时代结束了"
+   ],
+   "subtitle": "5G 基站已经占到全部移动基站的 40%，连青藏高原的山口都有覆盖。",
+   "stats": [
+    {
+     "value": "525.4万",
+     "label": "5G 基站（2026.9）"
+    },
+    {
+     "value": "40%",
+     "label": "占全部移动基站"
+    },
+    {
+     "value": "206.4万",
+     "label": "RedCap 基站（2025）"
+    }
+   ],
+   "transition": "flythrough",
+   "notes": "这张照片是青海拉脊山口的 5G 基站。海拔 3800 多米都有站了，说明「覆盖」这件事基本做完了。"
+  },
+  {
+   "layout": "charts",
+   "kicker": "BUILD-OUT",
+   "title": "总数还在涨，但每年**新增**已经连续两年下滑",
+   "panels": [
+    {
+     "title": "5G 基站累计（万个）",
+     "note": "年末数",
+     "chart": {
+      "type": "column",
+      "categories": [
+       "2020",
+       "2021",
+       "2022",
+       "2023",
+       "2024",
+       "2025"
+      ],
+      "series": [
+       {
+        "name": "累计",
+        "values": [
+         71.8,
+         142.5,
+         231.2,
+         337.7,
+         425.1,
+         483.8
+        ]
+       }
+      ]
+     },
+     "takeaway": "五年翻了近 **7 倍**"
+    },
+    {
+     "title": "每年净增（万个）",
+     "note": "2023 年是建网高峰",
+     "chart": {
+      "type": "column",
+      "categories": [
+       "2021",
+       "2022",
+       "2023",
+       "2024",
+       "2025"
+      ],
+      "series": [
+       {
+        "name": "净增",
+        "values": [
+         70.7,
+         88.7,
+         106.5,
+         87.4,
+         58.8
+        ]
+       }
+      ],
+      "highlight": 2
+     },
+     "takeaway": "2025 年新增只有高峰期的 **55%**"
+    }
+   ],
+   "source": "工信部历年通信业统计公报；净增为相邻年末差值",
+   "notes": "左边看总量，右边看增量。关键是右边：2023 年是顶点，之后一年比一年少。"
+  },
+  {
+   "layout": "kpi",
+   "kicker": "UPGRADE",
+   "title": "网已经够密了，接下来是**升级**而不是铺量",
+   "items": [
+    {
+     "label": "5G 基站",
+     "value": "525.4万",
+     "delta": "今年 +41.6万",
+     "highlight": true,
+     "note": "2026 年 9 月末"
+    },
+    {
+     "label": "占全部移动基站",
+     "value": "40%",
+     "delta": "近一半",
+     "note": "2026 年 9 月末"
+    },
+    {
+     "label": "RedCap 基站",
+     "value": "206.4万",
+     "delta": "占 5G 基站 42.7%",
+     "note": "2025 年末"
+    },
+    {
+     "label": "5G-A 覆盖城市",
+     "value": "330",
+     "delta": "以上",
+     "note": "2025 年"
+    }
+   ],
+   "summary": "新增站点越来越多是 **RedCap（轻量化 5G）** 和 **5G-A 升级**，面向物联网和高价值场景，而不是继续堆数量。",
+   "source": "工信部 2025 年统计公报、2026 年前三季度运行情况",
+   "notes": "四个数字里重点讲 RedCap：它是给手表、摄像头、工业传感器用的「轻量版 5G」，说明网络开始为行业设备服务。",
+   "split": {
+    "title": "5G 基站构成（2025 年末，共 483.8 万个）",
+    "note": "RedCap 占 42.7%",
+    "parts": [
+     {
+      "name": "RedCap 轻量化基站",
+      "value": 206.4,
+      "label": "206.4 万"
+     },
+     {
+      "name": "其他 5G 基站",
+      "value": 277.4,
+      "label": "277.4 万"
+     }
+    ]
+   }
+  },
+  {
+   "layout": "section",
+   "no": "02",
+   "title": "用网：流量涨，收入平",
+   "subtitle": "用户见顶之后，增长靠什么？",
+   "image": "../assets/5g_images/city_night.jpg",
+   "credit": "King of Hearts / Wikimedia Commons (CC BY-SA 4.0)",
+   "transition": "cube"
+  },
+  {
+   "layout": "stat",
+   "kicker": "PENETRATION",
+   "label": "5G 移动电话用户（2026 年 9 月末）",
+   "value": "13.2亿",
+   "badge": "71%",
+   "delta": "渗透率 71.2%，占全部手机用户",
+   "transition": "ripple",
+   "text": "每 10 个手机用户里，已经有 7 个在用 5G。**新增用户基本见顶**，接下来拼的是每个用户用得多不多、值不值钱。",
+   "source": "工信部 2026 年前三季度通信业经济运行情况",
+   "notes": "这个数字要停顿一下。13.2 亿，71%——意思是能转的用户都转得差不多了。",
+   "gauge": {
+    "value": 71.2,
+    "text": "71.2%",
+    "label": "5G 渗透率"
+   }
+  },
+  {
+   "layout": "timeline",
+   "kicker": "ADOPTION",
+   "title": "5G 用户五年走完了从 2 成到 7 成",
+   "items": [
+    {
+     "time": "2021",
+     "title": "3.55 亿"
+    },
+    {
+     "time": "2022",
+     "title": "5.61 亿"
+    },
+    {
+     "time": "2023",
+     "title": "8.05 亿"
+    },
+    {
+     "time": "2024",
+     "title": "10.14 亿"
+    },
+    {
+     "time": "2025",
+     "title": "12.04 亿"
+    },
+    {
+     "time": "2026.9",
+     "title": "13.20 亿",
+     "highlight": true,
+     "text": "渗透率 71.2%"
+    }
+   ],
+   "source": "工信部历年统计公报；2021、2023 渗透率为计算值",
+   "notes": "每年大约多 2 亿用户，但从 2024 年开始增速明显变慢。",
+   "chart": {
+    "title": "5G 用户（亿）· 柱",
+    "bars": [
+     3.55,
+     5.61,
+     8.05,
+     10.14,
+     12.04,
+     13.2
+    ],
+    "line": [
+     21.6,
+     33.3,
+     46.6,
+     56.7,
+     65.9,
+     71.2
+    ],
+    "line_name": "渗透率（%）· 线"
+   }
+  },
+  {
+   "layout": "charts",
+   "kicker": "THE GAP",
+   "title": "流量越用越多，**收入**却几乎不涨",
+   "panels": [
+    {
+     "title": "移动互联网流量（亿 GB）",
+     "note": "2025 年同比 +17.3%",
+     "chart": {
+      "type": "line",
+      "categories": [
+       "2021",
+       "2022",
+       "2023",
+       "2024",
+       "2025"
+      ],
+      "series": [
+       {
+        "name": "流量",
+        "values": [
+         2216,
+         2618,
+         3015,
+         3376,
+         3958
+        ]
+       }
+      ],
+      "y_min": 1500
+     },
+     "takeaway": "五年增长 **79%**"
+    },
+    {
+     "title": "电信业务收入增速（%）",
+     "note": "2026 年前三季度为 −2.5%（含增值税调整影响）",
+     "chart": {
+      "type": "column",
+      "categories": [
+       "2021",
+       "2022",
+       "2023",
+       "2024",
+       "2025"
+      ],
+      "series": [
+       {
+        "name": "收入增速",
+        "values": [
+         8.0,
+         8.0,
+         6.2,
+         3.2,
+         0.7
+        ]
+       }
+      ],
+      "format": "0.0"
+     },
+     "takeaway": "增速从 8% 掉到 **0.7%**"
+    }
+   ],
+   "source": "工信部历年统计公报；2026 年起移动数据等业务增值税由 6% 调为 9%",
+   "notes": "这一页是整份汇报的核心：左边一路向上，右边一路向下，这就是「剪刀差」。流量不再能直接换成钱。"
+  },
+  {
+   "layout": "split",
+   "image": "../assets/5g_images/phone.jpg",
+   "credit": "Pixel.la / Wikimedia Commons (CC0)",
+   "kicker": "USAGE",
+   "title": "每人每月用掉 24 GB，但不愿意多付钱",
+   "bullets": [
+    "DOU（户均月流量）从 2023 年的 16.85 GB 涨到 2026 年 9 月的 **23.89 GB**",
+    "移动数据流量收入 2025 年 **−3.1%**，连续第三年下降",
+    "新兴业务（云、大数据、物联网）收入 **+4.7%**，占比升到 25.7%"
+   ],
+   "stats": [
+    {
+     "value": "23.89",
+     "label": "DOU（GB/月）"
+    },
+    {
+     "value": "6097",
+     "label": "流量收入（亿元，2025）"
+    }
+   ],
+   "source": "工信部 2025 年统计公报、2026 年 9 月数据",
+   "notes": "用户在用，但「不限量」套餐普及之后，多用的流量不再多收钱。"
+  },
+  {
+   "layout": "section",
+   "no": "03",
+   "title": "运营商：钱往哪里花",
+   "subtitle": "资本开支在缩，方向在变",
+   "image": "../assets/5g_images/datacenter.jpg",
+   "credit": "PiDatacenters / Wikimedia Commons (CC BY-SA 4.0)",
+   "transition": "cube"
+  },
+  {
+   "layout": "table",
+   "kicker": "OPERATORS",
+   "title": "三大运营商 2025 年关键指标",
+   "columns": [
+    "运营商",
+    "营收（亿元）",
+    "移动用户",
+    "5G 网络客户",
+    "移动 ARPU（元）",
+    "2026 资本开支计划（亿元）"
+   ],
+   "rows": [
+    [
+     "中国移动",
+     "10502",
+     "10.05亿",
+     "6.42亿",
+     "46.8",
+     "1366"
+    ],
+    [
+     "中国电信",
+     "5296",
+     "4.39亿",
+     "3.02亿",
+     "45.1",
+     "730"
+    ],
+    [
+     "中国联通",
+     "3922",
+     "3.57亿",
+     "—",
+     "—",
+     "约 500"
+    ]
+   ],
+   "highlight_row": 0,
+   "transition": "flip",
+   "source": "三大运营商 2025 年年报及业绩发布会报道；联通未披露同口径数据的项目用「—」",
+   "notes": "联通 5G 用户和 ARPU 没有找到同口径数据，这里空着，不编。",
+   "summary": "中国移动一家的营收，约等于电信、联通**两家之和**；2026 年三家资本开支计划合计约 2600 亿。"
+  },
+  {
+   "layout": "chart",
+   "kicker": "CAPEX",
+   "title": "三家资本开支**连续下滑**，2026 年合计约 2600 亿",
+   "chart": {
+    "type": "column",
+    "categories": [
+     "2023",
+     "2024",
+     "2025",
+     "2026 计划"
+    ],
+    "series": [
+     {
+      "name": "中国移动",
+      "values": [
+       1803,
+       1640,
+       1509,
+       1366
+      ]
+     },
+     {
+      "name": "中国电信",
+      "values": [
+       988,
+       935,
+       804,
+       730
+      ]
+     },
+     {
+      "name": "中国联通",
+      "values": [
+       739,
+       614,
+       542,
+       500
+      ]
+     }
+    ],
+    "unit": "亿元"
+   },
+   "insights": [
+    "2025 年三家合计 **2855 亿**，2026 年计划约 **2596 亿**。",
+    "下降的主要是**通信网络**投资；算力投资反而在加码。",
+    "电信、联通共建共享超 160 万个 5G 基站，省下了重复建设。"
+   ],
+   "source": "三大运营商年报及业绩会；电信、联通 2023 年为按降幅推算的约数",
+   "notes": "柱子是一年一组长出来的，讲的时候可以跟着念：一年比一年低。"
+  },
+  {
+   "layout": "chart",
+   "kicker": "MARKET",
+   "title": "移动用户格局：中国移动占一半以上",
+   "chart": {
+    "type": "auto",
+    "categories": [
+     "中国移动",
+     "中国电信",
+     "中国联通",
+     "中国广电"
+    ],
+    "series": [
+     {
+      "name": "移动用户占比",
+      "values": [
+       54.5,
+       23.8,
+       19.4,
+       2.3
+      ]
+     }
+    ],
+    "highlight": 0,
+    "center": "约 18.3 亿\n移动用户"
+   },
+   "insights": [
+    "四家自报用户合计约 18.4 亿，与工信部口径略有差异，占比为近似值。",
+    "广电是第四家运营商，2024 年起纳入工信部 5G 统计。"
+   ],
+   "source": "各运营商 2025 年末用户数，按合计计算占比"
+  },
+  {
+   "layout": "donut_story",
+   "kicker": "SHIFT · 2025",
+   "title": "钱在搬家：2025 年，通信网络还占八成",
+   "segments": [
+    {
+     "name": "通信网络",
+     "value": 994,
+     "label": "约 994 亿"
+    },
+    {
+     "name": "算力网络",
+     "value": 233,
+     "label": "约 233 亿"
+    }
+   ],
+   "center": [
+    "2025",
+    "约 1227 亿"
+   ],
+   "note": "以中国移动为例。5G 建网期，钱主要花在基站和传输网上。",
+   "source": "中国移动 2025 年业绩会（2026 资本开支计划及同比增速）；2025 年数值 = 2026 计划 ÷ (1 + 增速)，为推算值；只统计这两类投资",
+   "transition": "fade",
+   "notes": "先看 2025 年：通信网络 994 亿，算力网络 233 亿，八二开。下一页看 2026 年计划。",
+   "teaser": "2026 年会怎么变？"
+  },
+  {
+   "layout": "donut_story",
+   "kicker": "SHIFT · 2026 计划",
+   "title": "钱在搬家：2026 年，算力网络涨到三成",
+   "transition": "none",
+   "segments": [
+    {
+     "name": "通信网络",
+     "value": 792,
+     "label": "792 亿"
+    },
+    {
+     "name": "算力网络",
+     "value": 378,
+     "label": "378 亿"
+    }
+   ],
+   "center": [
+    "2026 计划",
+    "1170 亿"
+   ],
+   "annotations": [
+    {
+     "title": "通信网络 −20.3%",
+     "text": "5G 建网高峰已过，转为按需补点和 5G-A 升级；电信、联通共建共享也在压降重复投资。",
+     "trend": "down"
+    },
+    {
+     "title": "算力网络 +62.4%",
+     "text": "智算中心、GPU 集群、AI 推理服务。2025 年算力服务收入 898 亿（+11.1%），其中智算 +279%。",
+     "trend": "up"
+    }
+   ],
+   "source": "中国移动 2025 年业绩会（2026 资本开支计划及同比增速）；2025 年数值 = 2026 计划 ÷ (1 + 增速)，为推算值；只统计这两类投资",
+   "notes": "切到这一页，饼图会自己转过去：通信网络缩到 68%，算力网络涨到 32%。然后讲右边两条原因。",
+   "continue": true
+  },
+  {
+   "layout": "section",
+   "no": "04",
+   "title": "下一步：5G-A、行业、算力",
+   "subtitle": "下半场的三条新赛道",
+   "image": "../assets/5g_images/tower_aerial.jpg",
+   "credit": "Wikideas1 / Wikimedia Commons (CC0)",
+   "transition": "cube"
+  },
+  {
+   "layout": "arch",
+   "kicker": "NEW STACK",
+   "title": "下半场的新战场：网络 + 算力 + 行业",
+   "layers": [
+    {
+     "name": "行业应用",
+     "items": [
+      "5G+工业互联网项目 2.5 万+",
+      "5G 工厂 1260 家",
+      "国民经济 97 个大类全覆盖"
+     ]
+    },
+    {
+     "name": "算力",
+     "highlight": true,
+     "items": [
+      "全国智算 2592 EFLOPS",
+      "中国移动 92.5 EFLOPS",
+      "中国电信 91 EFLOPS"
+     ]
+    },
+    {
+     "name": "网络",
+     "items": [
+      "5G-A 覆盖 330+ 城市",
+      "RedCap 基站 206.4 万",
+      "千兆宽带 2.65 亿户"
+     ]
+    },
+    {
+     "name": "终端",
+     "items": [
+      "5G 手机用户 13.2 亿",
+      "5G-A 用户破 1000 万",
+      "物联网终端"
+     ]
+    }
+   ],
+   "source": "工信部、新华社及三大运营商公开数据（2025—2026）；各家算力口径不同，不可直接比较",
+   "notes": "这一页从下往上讲：终端和网络是上半场的成果，算力是现在加码最猛的一层，行业应用是最终变现的地方。"
+  },
+  {
+   "layout": "gallery",
+   "kicker": "SCENARIOS",
+   "title": "5G 真正赚钱的地方，在这些场景里",
+   "items": [
+    {
+     "image": "../assets/5g_images/port.jpg",
+     "tag": "港口",
+     "title": "智慧港口",
+     "text": "龙门吊远程操控、无人集卡，5G 专网替代光纤。",
+     "stat": "60 座",
+     "stat_label": "全国已投运自动化码头（交通运输部，2025）"
+    },
+    {
+     "image": "../assets/5g_images/factory.jpg",
+     "tag": "工厂",
+     "title": "5G 工厂",
+     "text": "机器视觉质检、柔性产线，设备通过 RedCap 低成本联网。",
+     "stat": "1260 家",
+     "stat_label": "5G 工厂（工信部，2026.4）"
+    },
+    {
+     "image": "../assets/5g_images/grid.jpg",
+     "tag": "电网",
+     "title": "智能电网",
+     "text": "配电自动化、输电线路巡检，对时延和可靠性要求最高。",
+     "stat": "58.6 亿",
+     "stat_label": "5G+智能电网市场规模（2025 预测，智研咨询）"
+    }
+   ],
+   "credit": "Reb42 (CC BY 3.0)；Shixart1985 (CC BY 2.0) · Wikimedia Commons",
+   "notes": "这三个场景的共同点：客户愿意为确定性和可靠性付钱，而不是为流量付钱。",
+   "source": "交通运输部；国新办 2026-04-21 发布会；智研咨询（第三方估算）"
+  },
+  {
+   "layout": "process",
+   "kicker": "PLAYBOOK",
+   "title": "运营商的下半场打法",
+   "steps": [
+    {
+     "title": "网络升级",
+     "text": "5G-A、RedCap 按需补点，不再拼数量",
+     "stage": "now"
+    },
+    {
+     "title": "行业复制",
+     "text": "把港口、工厂等成熟方案做成标准产品",
+     "stage": "next"
+    },
+    {
+     "title": "算力 + AI",
+     "text": "智算中心和 AI 服务成为新的收入来源",
+     "highlight": true,
+     "stage": "next"
+    },
+    {
+     "title": "按价值收费",
+     "text": "从卖流量转向卖确定性、卖能力",
+     "stage": "later"
+    }
+   ],
+   "summary": "核心变化：**从「建了多少」转向「用得多好」**。",
+   "notes": "四步是一条链：网络是底座，行业和算力是增长，最后落到收费模式的改变。"
+  },
+  {
+   "layout": "quote",
+   "text": [
+    "5G 的上半场比谁建得快，",
+    "下半场比谁**用得好**。"
+   ],
+   "by": "本次汇报结论",
+   "transition": "fade"
+  },
+  {
+   "layout": "end",
+   "title": "谢谢",
+   "subtitle": "欢迎提问与讨论",
+   "transition": "vortex",
+   "credits": "图片来源 Wikimedia Commons：Michał Beim (CC BY 4.0)；King of Hearts (CC BY-SA 4.0)；Shixart1985 (CC BY 2.0)；Reb42 (CC BY 3.0)；PiDatacenters (CC BY-SA 4.0)；Wikideas1、Pixel.la (CC0)"
+  }
+ ],
+ "style": "consulting",
+ "masthead": "5G 进入下半场 · 行业观察"
+}

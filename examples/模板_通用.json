@@ -1,0 +1,71 @@
+{
+ "_说明": "通用模板：照着改结构和字段。里面的数字全部是示例，必须换成用户的真实数据，不能保留。",
+ "title": "2026 年度业务复盘",
+ "masthead": "2026 年度业务复盘 · 某某部门",
+ "style": "consulting",
+ "slides": [
+  {"layout": "cover", "kicker": "ANNUAL REVIEW · 2026", "title": ["2026 年度业务复盘", "增长放缓，利润变厚"],
+   "subtitle": "收入、客户、成本三条线的变化，以及明年的三件事", "meta": "汇报人：某某 · 2026 年 12 月",
+   "stats": [{"value": "12.6亿", "label": "全年收入", "highlight": true}, {"value": "+8.4%", "label": "同比增长"}, {"value": "3.2万", "label": "付费客户"}, {"value": "21%", "label": "利润率"}],
+   "notes": "开场一句话：今年收入增长放缓到 8%，但利润率提高了 3 个点。接下来用三部分讲清楚为什么。"},
+
+  {"layout": "agenda", "kicker": "CONTENTS", "title": "三个部分，讲清今年发生了什么",
+   "items": [{"title": "收入：增速放缓", "text": "新客户变少，老客户贡献变大"},
+             {"title": "成本：结构调整", "text": "投放费用降了，研发投入涨了"},
+             {"title": "明年：三件事", "text": "提价、出海、做 AI 功能"}],
+   "notes": "三个部分，大概 10 分钟。"},
+
+  {"layout": "section", "no": "01", "title": "收入：增速放缓", "subtitle": "新客户变少，老客户贡献变大",
+   "notes": "先看收入。"},
+
+  {"layout": "kpi", "kicker": "REVENUE", "title": "收入还在涨，但增速从 15% 降到 **8%**",
+   "items": [{"label": "全年收入", "value": "12.6亿", "delta": "+8.4%", "highlight": true, "note": "2026 全年"},
+             {"label": "新客户收入", "value": "3.1亿", "delta": "-12%", "trend": "down", "note": "首年付费"},
+             {"label": "老客户收入", "value": "9.5亿", "delta": "+17%", "note": "续费 + 增购"},
+             {"label": "续费率", "value": "92%", "delta": "+4 个点", "note": "按金额"}],
+   "split": {"title": "收入构成（2026 年，共 12.6 亿）", "note": "老客户占 75%",
+             "parts": [{"name": "老客户", "value": 9.5, "label": "9.5 亿"}, {"name": "新客户", "value": 3.1, "label": "3.1 亿"}]},
+   "source": "示例数据，请替换", "notes": "四个数字里重点看老客户：贡献了四分之三的收入，而且还在涨。"},
+
+  {"layout": "chart", "kicker": "TREND", "title": "近五年收入：增速**连续两年**放缓",
+   "chart": {"type": "auto", "categories": ["2022", "2023", "2024", "2025", "2026"], "series": [{"name": "收入", "values": [7.1, 8.6, 10.1, 11.6, 12.6]}], "unit": "亿元"},
+   "insights": ["2022–2024 年平均每年增长 **19%**。", "2025 年起新客户获取变难，增速降到个位数。", "老客户续费稳定，是收入的「压舱石」。"],
+   "source": "示例数据，请替换", "notes": "柱子一年一年长出来，讲的时候跟着念：前三年涨得快，后两年慢下来。"},
+
+  {"layout": "charts", "kicker": "THE GAP", "title": "投放越来越贵，**获客**越来越少",
+   "panels": [{"title": "投放费用（千万元）", "chart": {"type": "line", "categories": ["2023", "2024", "2025", "2026"], "series": [{"name": "投放", "values": [8.2, 9.6, 10.4, 9.1]}]}, "takeaway": "今年主动砍了 **12%**"},
+              {"title": "新增付费客户（千家）", "chart": {"type": "column", "categories": ["2023", "2024", "2025", "2026"], "series": [{"name": "新客户", "values": [9.8, 8.7, 7.2, 6.1]}]}, "takeaway": "连续三年下滑"}],
+   "source": "示例数据，请替换", "notes": "左边是钱，右边是结果：花的钱前三年在涨，新客户却一年比一年少。"},
+
+  {"layout": "section", "no": "02", "title": "成本：结构调整", "subtitle": "钱从投放搬到了研发", "notes": "再看成本。"},
+
+  {"layout": "table", "kicker": "COST", "title": "三项主要成本的变化",
+   "columns": ["成本项", "2025（亿元）", "2026（亿元）", "变化"],
+   "rows": [["研发", "2.1", "2.6", "+24%"], ["销售与投放", "3.4", "2.9", "-15%"], ["管理", "1.2", "1.1", "-8%"]],
+   "highlight_row": 0, "summary": "研发是唯一增加的一项，**利润率反而提高了 3 个点**。",
+   "source": "示例数据，请替换", "notes": "表格里只看第一行：研发多花了 5000 万，其他两项都在省。"},
+
+  {"layout": "donut_story", "kicker": "SHIFT · 2025", "title": "钱在搬家：2025 年，投放还占一半",
+   "segments": [{"name": "投放与销售", "value": 3.4, "label": "3.4 亿"}, {"name": "研发", "value": 2.1, "label": "2.1 亿"}],
+   "center": ["2025", "5.5 亿"], "note": "两项合计 5.5 亿，投放占六成。", "teaser": "2026 年会怎么变？",
+   "source": "示例数据，请替换", "notes": "先看 2025 年：投放 3.4 亿，研发 2.1 亿。"},
+
+  {"layout": "donut_story", "kicker": "SHIFT · 2026", "title": "钱在搬家：2026 年，研发追到一半", "continue": true, "transition": "none",
+   "segments": [{"name": "投放与销售", "value": 2.9, "label": "2.9 亿"}, {"name": "研发", "value": 2.6, "label": "2.6 亿"}],
+   "center": ["2026", "5.5 亿"],
+   "annotations": [{"title": "投放 −15%", "text": "停掉了回本周期超过 18 个月的渠道。", "trend": "down"},
+                   {"title": "研发 +24%", "text": "主要投在 AI 功能和海外版本。", "trend": "up"}],
+   "source": "示例数据，请替换", "notes": "总数没变，但研发从四成涨到将近一半。"},
+
+  {"layout": "process", "kicker": "2027 PLAN", "title": "明年做三件事",
+   "steps": [{"title": "老客户提价", "text": "高级版涨价 10%，配套新功能", "stage": "now"},
+             {"title": "东南亚出海", "text": "先做新加坡、马来西亚两个市场", "stage": "next"},
+             {"title": "AI 功能收费", "text": "单独定价，目标 1 亿收入", "stage": "later", "highlight": true}],
+   "summary": "核心变化：从「拉新」转向「**老客户 + 新市场**」。",
+   "notes": "三件事有先后：提价马上做，出海下半年，AI 收费是明年最大的目标。"},
+
+  {"layout": "quote", "text": ["增长慢下来的时候，", "**利润**才是真正的底气。"], "by": "本次复盘结论", "notes": "最后一句话总结。"},
+
+  {"layout": "end", "title": "谢谢", "subtitle": "欢迎提问与讨论", "notes": "进入提问环节。"}
+ ]
+}
