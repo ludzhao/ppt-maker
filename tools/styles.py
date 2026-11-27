@@ -50,7 +50,7 @@ STYLES = {
                   'quote': 'Inter|Noto Sans SC'},
         'card': 'glass', 'bg': 'gradient', 'frame': 'none', 'eyebrow': 'caps', 'photo': 'blue', 'cover': 'photo',
     },
-    # A 薄荷数据（设计系统，版式自带：tools/designs/mint.py）：参考 Capitalo 金融报告
+    # A 薄荷数据（设计系统，版式自带：tools/design_mint.py）：参考 Capitalo 金融报告
     'mint': {
         'label': '薄荷数据',
         'palette': {'bg': '1D2744', 'surface': '26325A', 'surface_2': '2E3B66', 'border': '3A4775', 'border_strong': 'FFFFFF',
@@ -62,7 +62,7 @@ STYLES = {
         'card': 'dark', 'bg': 'flat', 'frame': 'minimal', 'eyebrow': 'caps', 'photo': 'mute', 'cover': 'dark',
         'design': 'mint',
     },
-    # B 黑白杂志（设计系统：tools/designs/folio.py）：参考 Laurel
+    # B 黑白杂志（设计系统：tools/design_folio.py）：参考 Laurel
     'folio': {
         'label': '黑白杂志',
         'palette': {'bg': '0C0C0C', 'surface': '161616', 'surface_2': '1E1E1E', 'border': '3A3936', 'border_strong': 'F2F0EB',
@@ -73,7 +73,7 @@ STYLES = {
                   'quote': 'Playfair Display|Noto Serif SC'},
         'card': 'hairline', 'bg': 'flat', 'frame': 'minimal', 'eyebrow': 'caps', 'photo': 'natural', 'cover': 'dark', 'design': 'folio',
     },
-    # C 暗黑董事会（设计系统：tools/designs/ember.py）：参考 Pitch · Board Deck
+    # C 暗黑董事会（设计系统：tools/design_ember.py）：参考 Pitch · Board Deck
     'ember': {
         'label': '暗黑董事会',
         'palette': {'bg': '0B0B0C', 'surface': '141416', 'surface_2': '1C1C1F', 'border': '2A2A2E', 'border_strong': 'F4F4F2',
@@ -84,7 +84,7 @@ STYLES = {
                   'quote': 'Space Grotesk|Noto Sans SC Black'},
         'card': 'dark', 'bg': 'flat', 'frame': 'minimal', 'eyebrow': 'caps', 'photo': 'natural', 'cover': 'dark', 'design': 'ember',
     },
-    # D Y2K 糖果（设计系统：tools/designs/candy.py）：参考 Pitch · Lucid
+    # D Y2K 糖果（设计系统：tools/design_candy.py）：参考 Pitch · Lucid
     'candy': {
         'label': 'Y2K 糖果',
         'palette': {'bg': 'F3D9F0', 'surface': 'FFFFFF', 'surface_2': 'F6F2FF', 'border': 'E4DAFF', 'border_strong': '231942',
@@ -94,7 +94,7 @@ STYLES = {
         'fonts': {'title': 'Smiley Sans', 'body': 'Space Grotesk|Noto Sans SC', 'num': 'Smiley Sans', 'quote': 'Smiley Sans'},
         'card': 'soft', 'bg': 'flat', 'frame': 'minimal', 'eyebrow': 'caps', 'photo': 'natural', 'cover': 'dark', 'design': 'candy',
     },
-    # E 深色荧光绿（设计系统：tools/designs/volt.py）：参考 Grid-Scale Battery / B.Forge
+    # E 深色荧光绿（设计系统：tools/design_volt.py）：参考 Grid-Scale Battery / B.Forge
     'volt': {
         'label': '深色荧光绿',
         'palette': {'bg': '101311', 'surface': '1B201C', 'surface_2': '242B25', 'border': '2F3830', 'border_strong': 'B8F36B',

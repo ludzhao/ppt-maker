@@ -84,9 +84,9 @@ def build(deck, out, theme_name=None, font=None, base=None, style_name=None, emb
     blank = prs.slide_layouts[6]
     total = len(deck['slides'])
     design = None
-    if style and style.get('design'):   # 设计系统：版式自带（tools/designs/<名字>.py），没覆盖的页型用通用版式
+    if style and style.get('design'):   # 设计系统：版式自带（tools/design_<名字>.py），没覆盖的页型用通用版式
         import importlib
-        design = importlib.import_module('designs.' + style['design'])
+        design = importlib.import_module('design_' + style['design'])
     for i, s in enumerate(deck['slides'], 1):
         slide = prs.slides.add_slide(blank)
         c = Canvas(slide, t, fnt, style); c.idx = i

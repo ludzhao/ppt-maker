@@ -44,11 +44,11 @@
 
 ```
 SKILL.md            智能体读的说明书（流程、规则）
-tools/              生成器：build_deck.py（入口）、layouts.py（通用版式）、designs/（4 套设计系统）、anim.py（原生动画）…
+tools/              生成器：build_deck.py（入口）、layouts.py（通用版式）、design_*.py（4 套设计系统）、anim.py（原生动画）…
 references/         稿件格式、审美规范、动效指南
 examples/           示例稿件（ai_demo.json 覆盖全部常用版式）、风格菜单
 assets/             设计系统配图、示例照片
-fonts/pack/         离线字体包（SIL OFL 1.1）
+fonts/pack/         离线字体包（首次运行自动下载；授权见 licenses/）
 ```
 
 ## 致谢与授权

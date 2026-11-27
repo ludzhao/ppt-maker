@@ -1,9 +1,9 @@
-"""开源字体：下载缓存、实例化字重、按用到的字子集化、嵌入 pptx（对方电脑没装字体也能正常显示）。
+"""开源字体：读取离线包、实例化字重、按用到的字子集化、嵌入 pptx（对方电脑没装字体也能正常显示）。
 
-所有字体均为 SIL Open Font License 1.1，允许嵌入文档和随软件分发（授权原文见 fonts/licenses/）。
+所有字体均为 SIL Open Font License 1.1，允许嵌入文档和随软件分发（授权原文见 licenses/）。
 嵌入格式：PowerPoint 的 ppt/fonts/*.fntdata = Embedded OpenType（未压缩、未加密）。
 """
-import io, re, struct, zipfile, pathlib, urllib.request, shutil
+import io, re, struct, zipfile, pathlib, shutil
 from fontTools.ttLib import TTFont
 from fontTools.varLib import instancer
 from fontTools import subset as ftsubset
@@ -11,28 +11,7 @@ from fontTools import subset as ftsubset
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CACHE = ROOT / 'fonts' / 'cache'
 PACK = ROOT / 'fonts' / 'pack'   # 随 skill 分发的离线包：中文字体是 GB2312 全部 6763 字 + 常用符号的静态子集
-GF = 'https://github.com/google/fonts/raw/main/ofl'
-JSD = 'https://cdn.jsdelivr.net/gh/google/fonts@main/ofl'   # 国内镜像
-
-# 源文件：名字 -> (候选下载地址列表)
-_CN = ['https://testingcf.jsdelivr.net/gh/google/fonts@main/ofl', 'https://gcore.jsdelivr.net/gh/google/fonts@main/ofl', JSD]   # 国内可用的镜像优先
-_GHP = ['https://gh-proxy.com/', 'https://ghfast.top/', '']   # GitHub Releases 国内代理，最后直连
-
-
-def _gf(path): return [f'{m}/{path}' for m in _CN] + [f'{GF}/{path}']
-def _rel(url): return [p + url for p in _GHP]
-
-
-SOURCES = {
-    'NotoSansSC[wght].ttf': _gf('notosanssc/NotoSansSC%5Bwght%5D.ttf'),
-    'NotoSerifSC[wght].ttf': _gf('notoserifsc/NotoSerifSC%5Bwght%5D.ttf'),
-    'Inter[opsz,wght].ttf': _gf('inter/Inter%5Bopsz,wght%5D.ttf'),
-    'SpaceGrotesk[wght].ttf': _gf('spacegrotesk/SpaceGrotesk%5Bwght%5D.ttf'),
-    'PlayfairDisplay[wght].ttf': _gf('playfairdisplay/PlayfairDisplay%5Bwght%5D.ttf'),
-    'LXGWWenKai-Regular.ttf': _rel('https://github.com/lxgw/LxgwWenKai/releases/download/v1.530/LXGWWenKai-Regular.ttf'),
-    'LXGWWenKai-Medium.ttf': _rel('https://github.com/lxgw/LxgwWenKai/releases/download/v1.530/LXGWWenKai-Medium.ttf'),
-    'smiley/SmileySans-Oblique.ttf': ['zip:' + u for u in _rel('https://github.com/atelier-anchor/smiley-sans/releases/download/v2.0.1/smiley-sans-v2.0.1.zip')],
-}
+# 本模块不联网：字体只从 fonts/pack（离线包，由 setup_env.py 校验后放好）和 fonts/cache（可选，用户自备的完整字体）读取。
 
 # PPT 里用的字体名 -> {样式: (源文件, 可变轴设置 或 None)}
 FAMILIES = {
@@ -50,45 +29,20 @@ FAMILIES = {
 }
 
 
-def fetch(name):
-    dst = CACHE / name
-    if dst.exists(): return dst
-    dst.parent.mkdir(parents=True, exist_ok=True)
-    last = None
-    for url in SOURCES[name]:
-        try:
-            if url.startswith('zip:'):
-                data = urllib.request.urlopen(urllib.request.Request(url[4:], headers={'User-Agent': 'ppt-skill/1.0'}), timeout=60).read()
-                with zipfile.ZipFile(io.BytesIO(data)) as z:
-                    member = [m for m in z.namelist() if m.endswith(pathlib.Path(name).name)][0]
-                    dst.write_bytes(z.read(member))
-            else:
-                req = urllib.request.Request(url, headers={'User-Agent': 'ppt-skill/1.0'})
-                dst.write_bytes(urllib.request.urlopen(req, timeout=60).read())
-            return dst
-        except Exception as e:
-            last = e
-    raise RuntimeError(f'字体下载失败：{name}（{last}）')
-
-
 def _open(family, style, text):
-    """找字体文件：完整缓存 > 离线包（覆盖所有字时）> 下载完整版 > 离线包（缺字由系统字体补）"""
+    """找字体文件：完整字体（fonts/cache，可选）> 离线包。离线包缺的生僻字由对方电脑的系统字体显示。"""
     src, axes = FAMILIES[family][style]
     if (CACHE / src).exists(): return TTFont(CACHE / src), axes
     if (PACK / src).exists(): return TTFont(PACK / src), axes          # 西文字体：整个可变字体都在包里
     pk = PACK / f"{family.replace(' ', '')}-{style}.ttf"
     if not pk.exists() and style == 'bold': pk = PACK / f"{family.replace(' ', '')}-regular.ttf"
-    if pk.exists():
-        f = TTFont(pk); cmap = f.getBestCmap()
-        missing = {ch for ch in text if ch.strip() and ord(ch) not in cmap}
-        if not missing: return f, None
-        try:
-            return TTFont(fetch(src)), axes
-        except Exception:
-            print(f'提示：{family} 离线包缺 {len(missing)} 个字（如 {"".join(sorted(missing)[:8])}），下载完整字体失败，这些字由对方电脑的系统字体显示')
-            return f, None
-    return TTFont(fetch(src)), axes
-
+    if not pk.exists():
+        raise FileNotFoundError(f'缺少字体文件 {pk.name}，请先运行 python3 tools/setup_env.py 补齐素材')
+    f = TTFont(pk); cmap = f.getBestCmap()
+    missing = {ch for ch in text if ch.strip() and ord(ch) not in cmap}
+    if missing:
+        print(f'提示：{family} 离线包缺 {len(missing)} 个生僻字（如 {"".join(sorted(missing)[:8])}），这些字由对方电脑的系统字体显示')
+    return f, None
 
 def _rename(font, family, style):
     name = font['name']
